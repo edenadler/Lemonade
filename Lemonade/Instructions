@@ -1,0 +1,29 @@
+No need for any server side support just UI.
+
+General Notes
+Header and footer are shared between the pages
+Header should include 2 links - one for LP (call it Home) and one for FAQ
+No need to implement the social buttons on the right side of the footer
+Feel free to use any 3rd party library/package that you may think of.
+Not mandatory, but you can use create-react-app if you find it useful.
+
+Landing page
+Unlike in our page, in your implementation the the form submit button should be disabled (grayed out) until the user enters a valid email address. Only once that happens the button becomes enabled (pink).
+No need to implement the functionality of any button on the screen.
+No need to implement the UI for the 'like' and 'follow' buttons.
+Bonus - Dynamic header height and bottom border. See how the header changes after you scroll down. 
+Bonus - Sonar animation on top of the map image
+
+FAQ page
+No need to add the icons in the tabs
+Tabs should be fixed to the top (like in the actual FAQ page) once the user scrolls.
+Clicking on a tab will auto scroll the page to the specific section
+No need to implement the entire page, pick 2-3 tabs and implement them.
+No need to add all the questions, just pick a couple from every tab.
+Notice the 'back to top' button (bottom right) that is showed after the user scrolls.
+Ignore the 'Help' button on the bottom right corner.
+Now for a few personal notes.
+
+Take your time, no need to rush, prefer quality over speed.
+Any question, something isn't clear, i'm here. Don't hesitate to ask.
+If you find this to be too big of an exercise or you find yourself investing too much time on it, stop, let me know and send over what you got so far. It's ok, I don't want this to take too much of your time, it's an exercise after all.

@@ -1,0 +1,555 @@
+/************************ GENERAL ******************************/
+
+body {
+  margin: 0;
+  padding: 0;
+ font: 400 1.6rem/1.3 "Lato","Helvetica Neue",Arial,sans-serif;
+}
+
+@font-face{
+	font-family: "Lato";
+	src: local("Lato"), url(./Lato/Lato-Regular.ttf) format('ttf');
+}
+
+ul, li{
+	list-style: none;
+	list-style-image: none;
+}
+
+.divider{
+	width: 15px;
+	height: auto;
+	display: inline-block;
+}
+
+.btn-standard{
+	font: 700 1.4rem/6rem "Lato","Helvetica Neue", Arial, sans-serif;
+	position: relative;
+	text-decoration: none;
+	text-transform: uppercase;
+	display: inline-block;
+	border-radius: 6px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.btn[disabled] .btn-standard{
+	cursor: pointer;
+}
+
+/***************** Header and Main Content **********************/
+
+.main-container{
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.main-header-wrap{
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+	overflow-x: hidden;
+	background: transparent;
+	transition: transform 0.3s ease-in-out;
+}
+
+.main-header{
+	background: #fff;
+	padding: 0 25px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	text-align: center;
+	border-bottom: 1px transparent solid;
+	width: 100%;
+	height: 100px;
+	backface-visibility: hidden;
+	overflow: hidden;
+}
+
+.main-header.condensed{
+	height: 70px;
+	border-color: #DADADA;
+}
+
+.main-header.condensed .logo{
+	bottom: 20px;
+}
+
+.main-header.condensed .logo img{
+	width: 80%;
+}
+
+.header-menu{
+	position: absolute;
+	top: 25px;
+	left: 25px;
+}
+
+.header-menu li{
+	display: inline-block;
+	padding-right: 20px;
+	color: #B7B7B7;
+}
+
+.logo{
+	position: absolute;
+	height: 33px;
+	width: 146px;
+	margin-left: -73px;
+	bottom: 0;
+	left: 50%;
+	display: inline-block;
+	transition: bottom 0.2s;
+}
+
+.logo img{
+	height: 33px;
+	width: 146px;
+	transition: width 0.2s;
+}
+
+/***************** HEADER (FAQ only) *******************/
+
+.main-wrapper{
+	position: relative;
+}
+
+.main-wrapper .main-content{
+	height: 100%;
+}
+
+.main-content{
+	padding-top: 70px;
+}
+
+.check-prices{
+	line-height: 4rem;
+	height: 4rem;
+	padding: 0 3rem;
+	position: absolute;
+	right: 20px;
+	top: 15px;
+	text-align: center;
+}
+
+/***************** FORM (LP only) *******************/
+
+.form-element{
+	display: inline-block;
+}
+
+.main-heading{
+	font: 400 70px/1.3 "Merriweather", Georgia, serif;
+	text-align: center;
+	margin-top: 50px;
+	text-transform: capitalize;
+}
+
+.landing-content{
+	padding-top: 100px;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
+
+.subheader{
+	width: 835px;
+	margin-top: 30px;
+	text-align: center;
+	font: 400 22px/1.3 "Lato", "Helvetica Neue", Arial, sans-serif;
+	line-height: 32px;
+	white-space: pre;
+}
+
+.register-form{
+	margin-top: 30px;
+	width: 660px;
+	height: 72px;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.form-inputs{
+	display: flex;
+	flex-flow: row;
+}
+
+.dropdown button, #state-dropdown{
+	height: 40px;
+	padding: 10px 15px 10px 15px;
+	font: 400 14px/1.3 "Lato","Helvetica Neue",Arial,sans-serif;
+	font-weight: 700;
+	border-color: #DADADA;
+	text-indent: 0.01px;
+	display: inline-block;
+}
+
+.btn .caret .caret-state{
+	margin-left: 20px;
+}
+
+.form-inputs input{
+	border-color: #DADADA;
+	height: 40px;
+	width: 300px;
+	padding: 10px 15px;
+	border-radius: 6px;
+}
+
+.btn.btn-pink-enabled{
+	background-color: #FF0083;
+	color: white;
+	border-radius: 6px;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 40px;
+	cursor: pointer;
+}
+
+.btn.btn-pink-disabled{
+	background-color: #FF0083;
+	filter: grayscale(30%);
+	color: #ddd;
+	border-radius: 6px;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 50px;
+	cursor: pointer;
+}
+
+
+/***************** MAP (LP only) *******************/
+
+.map-container{
+	width: 881px;
+	height:  561px;
+	margin-top: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	overflow: hidden;
+}
+
+.map-container img{
+	z-index: 1;
+}
+
+.sonar-emitter {
+  position: absolute;
+  display: flex;
+  margin: 32px auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: rgba(255, 0, 131, 0.21);
+  z-index: 100;
+}
+
+.sonar-emitter::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  content: '';
+  background-color: rgba(255, 0, 131, 0.51);
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.sonar-emitter::after {
+  animation: sonarWave 2s linear infinite;
+}
+
+@keyframes sonarWave {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/***************** SOCIAL (LP only) *******************/
+
+.social-container{
+	margin-top: 60px;
+	width: 100%;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
+
+.call-to-action{
+	font: 400 22px/1.3 "Lato","Helvetica Neue",Arial, sans-serif;
+}
+
+.share-buttons{
+	margin-top: 10px;
+	display: flex;
+	flex-flow: row;
+}
+
+.share-button{
+	position: relative;
+	display: block;
+	width: 100px;
+	height: 40px;
+	border-radius: 5px;
+	text-align: center;
+	vertical-align: middle;
+	color: white;
+	font-size: 25px;
+	padding: 3px;
+}
+
+.share-button.facebook{
+	background-color: #3B5998;
+}
+
+.share-button.linkedin{
+	background-color: #0077B5;
+}
+
+.share-button.twitter{
+	background-color: #1DA1F2;
+}
+
+.social-update{
+	margin-top: 40px;
+	text-align: center;
+	color: #FF0083;
+	font-size: 100%;
+}
+
+/***************** UPDATES (LP only) *******************/
+
+.updates-container{
+	width: 100%;
+	margin-top: 52px;
+	padding: 70px 175px;
+	display: flex;
+	flex-flow: row;
+	align-items: center;
+	justify-content: center;
+	background-color: #F7F7F7; 
+}
+
+.coming-soon{
+	width: 600px;
+	padding: 13px 13px 13px 0;
+	font: 400 16px/1.3 "Lato","Helvetica Neue",Arial,sans-serif;
+}
+
+.coming-soon-title{
+	font-weight: 700;
+}
+
+.coming-soon-content{
+	line-height: 22px;
+	margin-top: 15px;
+}
+
+.follow-us{
+	width: 270px;
+	padding: 0 10px;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
+
+.follow-us-content{
+	width: 100%;
+	text-align: center;
+	margin-top: 20px;
+	font: 400 22px/1.3 "Lato","Helvetica Neue",Arial, sans-serif;
+	line-height: 30px;
+}
+
+.follow-us-links, .follow-us-links:focus, a:focus{
+	color: #FF0083;
+	margin: 5px;
+	text-decoration: none;
+}
+
+
+/***************** FAQ MENU *******************/
+.faq-menu{
+	left: 0;
+	right: 0;
+	top: 0;
+	z-index: 1;
+	font-size: 100%;
+}
+
+.faq-menu ul{
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	list-style: none;
+	list-style-image: none;
+	padding: 0;
+}
+
+.faq-menu ul li{
+	width: 20%;
+	height: 210px;
+	border: 1px #DADADA solid;
+	border-top: 0;
+}
+
+.faq-menu ul li a:hover{
+	border-color: rgba(255, 0, 131, 0.4);
+}
+
+.faq-menu ul li a{
+	position: relative;
+	padding: 13rem 4rem 0 4rem;
+	height: 100%;
+	color: #4A4A4A;
+	font-weight: 700;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 4px transparent solid;
+	transition: border-color 0.3s;
+}
+
+.faq-menu ul li a:before{
+	content: "";
+	background: transparent url(/faq-pics.svg) no-repeat 0 0;
+	background-size: 500px 100px;
+	position: absolute;
+	z-index: 2;
+	display: block;
+	overflow: hidden;
+	left: 50%;
+	top: 4rem;
+	width: 80px;
+	height: 100px;
+	margin: 0 auto 1rem auto;
+}
+
+.faq-menu ul li a.selected, .faq-menu ul li a.active{
+	border-color: #FF0083;
+}
+
+.faq-menu ul li a span{
+	padding-top: 4px;
+	max-width: 185px;
+	display: inline-block;
+}
+
+/***************** FAQ CONTENT *******************/
+
+.faq-inner-wrap{
+	position: relative;
+	padding-right: 465px;
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
+.btn-scroll-top{
+	background: #F7F7F7;
+	border: 1px #DADADA solid;
+	position: fixed;
+	z-index: 3;
+	right: 1.8rem;
+	bottom: 7.3rem;
+	text-decoration: none;
+	height: 6rem;
+	width: 6rem;
+	opacity: 0;
+	pointer-events: none;
+	border-radius: 50%;
+	border-radius: 50%;
+	transition: opacity 0.2s;
+}
+
+.btn-scroll-top:before{
+	content: "";
+	background: transparent url(./arrow.png) no-repeat 0 0;
+	display: block;
+	background-size: contain;
+	position: absolute;
+	padding: 28px;
+	width: 44px;
+	height: 38px;
+	z-index: 1;
+	overflow: hidden;
+}
+
+.btn-scroll-top.active{
+	opacity: 0.5;
+	pointer-events: initial;
+}
+
+.faq-section{
+	padding-left: 5rem;
+	padding-right: 5rem;
+	padding: 9rem 14rem 3rem 8.5rem;
+}
+
+h2{
+	font: 400 4rem/1.3 "Merriweather", Georgia, serif;
+	color: #4A4A4A;
+	padding-bottom: 4.5rem;
+	text-transform: capitalize;
+}
+
+
+h3{
+	font-size: 3rem;
+	font-weight: 400;
+	padding-bottom: 4.5rem;
+}
+
+.faq-section p{
+	font-size: 2.2rem;
+	line-height: 3rem;
+	padding-bottom: 4rem;
+}
+
+
+
+/***************** FOOTER *******************/
+
+.footer-container{
+	position: relative;
+	background: #313131;
+	min-height: 250px;
+	padding: 40px;
+}
+
+.footer-menu{
+	list-style: none;
+	list-style-image: none;
+	color: white;
+	padding-left: 0px;
+}
+
+.footer-menu li{
+	display: inline-block;
+	padding-right: 15px;
+}
+
+.legal{
+	padding-top: 10px;
+	color: #B7B7B7;
+}
