@@ -28,7 +28,7 @@ var FaqContent = React.createClass({
 		return(
 			<div className="faq-inner-wrap" style={this.props.navScroll === "shrink" ? {top: "210px", paddingBottom: "210px"}: {}}>
 				<a href="#faq" className={this.state.scrollTop} onClick={this.scrollTop}></a>
-				<Route exact path="/faq/#service" children={()=>(
+				<Route exact path="/faq#service" children={()=>(
 					<section className="faq-section section-1" id="service">
 					<div className="inner">
 						<h2>About Lemonade</h2>
@@ -42,7 +42,7 @@ var FaqContent = React.createClass({
 					</div>
 				</section>
 				)}/>
-				<Route exact path="/faq/#policy" children={()=>(
+				<Route exact path="/faq#policy" children={()=>(
 				<section className="faq-section section-2" id="policy">
 					<div className="inner">
 						<h2>Policy Stuff</h2>
@@ -53,7 +53,7 @@ var FaqContent = React.createClass({
 					</div>
 				</section>
 				)}/>
-				<Route exact path="/faq/#claims" children={()=>(
+				<Route exact path="/faq#claims" children={()=>(
 				<section className="faq-section section-3" id="claims">
 					<div className="inner">
 						<h2>Claims</h2>
