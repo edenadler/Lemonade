@@ -1,35 +1,35 @@
-import React, { Component } from 'react';
+import React from 'react';
+import {Link} from 'react-router-dom';
 import './index.css';
-import 'bootstrap/dist/css/bootstrap.css';
 
-class FaqMenu extends Component {
-	constructor(props){
-		super(props)
-		this.state ={
+var FaqMenu = React.createClass({
+	getInitialState(){
+		return{
 			activeIndex: "0"
 		}
-	}
-	handleMenuClick(){
-		console.log(this.id);
+	},
+	handleMenuClick(e){
+		console.log("id2",e.target.id);
 		this.setState({
-			activeIndex: this.id
+			activeIndex: e.target.id
 		})
-	}
+	},
 	
 	render(){
-
 		return(
-			<nav className="faq-menu" style={this.props.navScroll === "shrink" ? {top: "-62px", position: "fixed"}: {}}>
-				<ul>
-					<li><a id="0" href="#service" className={this.state.activeIndex === "0" ? 'selected' : ""}>About Lemonade</a></li>
-					<li><a id="1" href="#policy" className={this.state.activeIndex === "1" ? 'selected' : ""}>Policy Stuff</a></li>
-					<li><a id="2" href="#claims" className={this.state.activeIndex === "2" ? 'selected' : ""}>Claims</a></li>
-					<li><a href="#"><span>Insurance, Explained</span></a></li>
-					<li><a href="#"><span>Giveback and community</span></a></li>
-				</ul>
-			</nav>
+			<div>
+				<nav className="faq-menu" style={this.props.navScroll === "shrink" ? {top: "-62px", position: "fixed"}: {}}>
+					<ul>
+						<li><Link to={`${this.props.match.url}/#service`} id="0" onClick={this.handleMenuClick} className={this.state.activeIndex === "0" ? 'selected' : ""}>About Lemonade</Link></li>
+						<li><Link to={`${this.props.match.url}/#policy`} id="1" onClick={this.handleMenuClick} className={this.state.activeIndex === "1" ? 'selected' : ""}>Policy Stuff</Link></li>
+						<li><a id="2" href="#claims" className={this.state.activeIndex === "2" ? 'selected' : ""}>Claims</a></li>
+						<li><a href="#"><span>Insurance, Explained</span></a></li>
+						<li><a href="#"><span>Giveback and community</span></a></li>
+					</ul>
+				</nav>
+			</div>
 			)
 	}
-}
+})
 
 export default FaqMenu;

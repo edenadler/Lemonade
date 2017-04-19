@@ -45,7 +45,7 @@ var Header = React.createClass({
 						<li>Blog</li>
 					</ul>
 					<a href="/" className="logo"><img src={require('./logo.svg')} alt="Lemonade" /></a>
-					{this.props.location.pathname === "/faq" ? <a className="btn btn-pink-enabled btn-standard check-prices">Check our Prices</a> : ""}
+					{this.state.scroll === "main-header condensed" ? <a className="btn btn-pink-enabled btn-standard check-prices">Check our Prices</a> : ""}
 				</div>
 			</div>
 			)

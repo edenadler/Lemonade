@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './index.css';
 import Header from './header';
 import Footer from './footer';
 import FaqMenu from './faq-menu';
 import FaqContent from './faq-content';
-import {HashRouter, Route} from 'react-router-dom';
-import ScrollIntoView from './scrollIntoView';
 
 var Faq = React.createClass({
   getInitialState(){
@@ -19,7 +17,7 @@ var Faq = React.createClass({
     var scroll_pos_nav = 120;
 
     if (y_scroll_pos > scroll_pos_nav){
-    this.setState({ scroll: "shrink"})
+      this.setState({ scroll: "shrink"})
     }
     else {
       this.setState({ scroll: "normal"})
@@ -30,8 +28,8 @@ var Faq = React.createClass({
       <div className="main-wrapper">
         <div className="main-content">
           <Header location={this.props.location}></Header>
-          <FaqMenu navScroll={this.state.scroll}></FaqMenu>
-          <FaqContent navScroll={this.state.scroll}></FaqContent>
+          <FaqMenu navScroll={this.state.scroll} match={this.props.match}></FaqMenu>
+          <FaqContent navScroll={this.props.navScroll}></FaqContent>
           <Footer></Footer>
         </div>
       </div> 

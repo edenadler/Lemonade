@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './index.css';
-import {HashLink} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 
 var FaqContent = React.createClass({
@@ -28,7 +28,8 @@ var FaqContent = React.createClass({
 		return(
 			<div className="faq-inner-wrap" style={this.props.navScroll === "shrink" ? {top: "210px", paddingBottom: "210px"}: {}}>
 				<a href="#faq" className={this.state.scrollTop} onClick={this.scrollTop}></a>
-				<section className="faq-section section-1" id="service">
+				<Route exact path="/faq/#service" children={()=>(
+					<section className="faq-section section-1" id="service">
 					<div className="inner">
 						<h2>About Lemonade</h2>
 						<p>Lemonade Insurance Company is a property and casualty insurance company that is transforming the very business model of insurance. By injecting technology and transparency into an industry that often lacks both, we’re creating an insurance experience that is fast, affordable and hassle free. Unlike any other insurance company, we gain nothing by delaying or denying claims (we take a flat fee!), so we handle and pay most claims instantly.</p>
@@ -40,6 +41,8 @@ var FaqContent = React.createClass({
 						<p>No. Giveback is part of our policy, and it is our plan to pay it every year. Sometimes, peer groups will not have any money left to giveback because the claim they paid depleted the giveback pool. Paying claims is our top priority, and in extreme circumstances could come at the expense of the Giveback.</p>
 					</div>
 				</section>
+				)}/>
+				<Route exact path="/faq/#policy" children={()=>(
 				<section className="faq-section section-2" id="policy">
 					<div className="inner">
 						<h2>Policy Stuff</h2>
@@ -49,6 +52,8 @@ var FaqContent = React.createClass({
 						<p>Premiums are calculated individually for each policyholder and are based on a number of different factors including your credit history, recent claims and information about your property including its age, size, and construction quality. We also factor in the sensitivity of your home to windstorms, severe weather damage, and fires. We then provide discounts for protection equipment you may have installed, such as fire and burglar alarms.</p>
 					</div>
 				</section>
+				)}/>
+				<Route exact path="/faq/#claims" children={()=>(
 				<section className="faq-section section-3" id="claims">
 					<div className="inner">
 						<h2>Claims</h2>
@@ -58,6 +63,7 @@ var FaqContent = React.createClass({
 						<p>After you complete the claim report on the Lemonade app, you will be asked to enter your bank account wire information. Once your claim is approved, we’ll issue payment, minus the amount of the deductible, directly into your account.</p>
 					</div>
 				</section>
+				)}/>
 			</div>
 			)
 	}
