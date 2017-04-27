@@ -29,6 +29,9 @@ var FaqContent = React.createClass({
 			this.setState({ scrollTop: "btn-scroll-top"})
 		}
 	},
+	componentWillUnmount(){
+	    window.removeEventListener("scroll", this.handleScroll);
+	},
 	render(){
 		return(
 			<div className="faq-inner-wrap" style={this.props.navScroll === "shrink" ? {top: "210px", paddingBottom: "210px"}: {}}>

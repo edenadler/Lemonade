@@ -34,6 +34,9 @@ var Header = React.createClass({
 		}
 		
 	},
+	componentWillUnmount(){
+	    window.removeEventListener("scroll", this.handleScroll);
+	  },
 	render(){
 		return(
 			<div className="main-header-wrap">

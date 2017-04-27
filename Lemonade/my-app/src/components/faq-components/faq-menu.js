@@ -32,6 +32,9 @@ var FaqMenu = React.createClass({
 			})
 		}
 	},
+	componentWillUnmount(){
+	    window.removeEventListener("scroll", this.handleScroll);
+	},
 	render(){
 		return(
 			<div>

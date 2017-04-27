@@ -23,6 +23,9 @@ var Faq = React.createClass({
       this.setState({ scroll: "normal"})
     }
   },
+  componentWillUnmount(){
+    window.removeEventListener("scroll", this.handleScroll);
+  },
   render() {
 
     return (
