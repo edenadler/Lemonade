@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter, Route} from 'react-router-dom';
-import Main from './main';
-import './index.css';
-import Faq from './frequently-asked-questions';
+import Main from './components/landing-page-components/main';
+import './assets/styles/index.css';
+import Faq from './components/faq-components/frequently-asked-questions';
 import 'bootstrap/dist/css/bootstrap.css';
 
 

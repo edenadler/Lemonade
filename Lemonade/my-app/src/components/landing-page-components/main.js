@@ -1,12 +1,12 @@
 import React, { Component }  from 'react';
-import './index.css';
-import Header from './header';
+import '../../assets/styles/index.css';
+import Header from '../header';
 import Title from './title';
 import MainForm from './main-form';
 import USMap from './map';
 import Social from './social';
 import Updates from './updates';
-import Footer from './footer';
+import Footer from '../footer';
 
 
 class Main extends Component{

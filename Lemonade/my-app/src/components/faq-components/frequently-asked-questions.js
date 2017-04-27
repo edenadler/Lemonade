@@ -1,7 +1,7 @@
 import React from 'react';
-import './index.css';
-import Header from './header';
-import Footer from './footer';
+import '../../assets/styles/index.css';
+import Header from '../header';
+import Footer from '../footer';
 import FaqMenu from './faq-menu';
 import FaqContent from './faq-content';
 
@@ -24,11 +24,12 @@ var Faq = React.createClass({
     }
   },
   render() {
+
     return (
       <div className="main-wrapper">
         <div className="main-content">
           <Header location={this.props.location}></Header>
-          <FaqMenu navScroll={this.state.scroll} match={this.props.match}></FaqMenu>
+          <FaqMenu navScroll={this.state.scroll} location={this.props.location}></FaqMenu>
           <FaqContent navScroll={this.props.navScroll}></FaqContent>
           <Footer></Footer>
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import './index.css';
+import '../assets/styles/index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 var Header = React.createClass({
@@ -44,8 +44,8 @@ var Header = React.createClass({
 						<li><Link to='/faq'>FAQ</Link></li>
 						<li>Blog</li>
 					</ul>
-					<a href="/" className="logo"><img src={require('./logo.svg')} alt="Lemonade" /></a>
-					{this.state.scroll === "main-header condensed" ? <a className="btn btn-pink-enabled btn-standard check-prices">Check our Prices</a> : ""}
+					<a href="/" className="logo"><img src={require('../assets/images/logo.svg')} alt="Lemonade" /></a>
+					{this.props.location.pathname === "/faq" ? <a className="btn btn-pink-enabled btn-standard check-prices">Check our Prices</a> : ""}
 				</div>
 			</div>
 			)

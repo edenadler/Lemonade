@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './index.css';
+import '../../assets/styles/index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 class Updates extends Component {
@@ -22,7 +22,7 @@ class Updates extends Component {
 				</div>
 				<div className="divider"></div>
 				<div className="follow-us">
-					<img src={require('./logo_round.png')} alt="lemonade logo"/>
+					<img src={require('../../assets/images/logo_round.png')} alt="lemonade logo"/>
 					<div className="follow-us-content">Follow us on <a className="follow-us-links">Facebook</a>or<a className="follow-us-links">Twitter</a> to stay updated on our roadmap!</div>
 				</div>
 			</div>
