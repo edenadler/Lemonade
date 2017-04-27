@@ -432,6 +432,10 @@ ul, li{
 	border-color: rgba(255, 0, 131, 0.4);
 }
 
+.faq-menu ul li a:focus{
+	margin: 0;
+}
+
 .faq-menu ul li a{
 	position: relative;
 	padding: 13rem 4rem 0 4rem;
